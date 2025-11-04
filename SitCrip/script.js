@@ -9,8 +9,13 @@ function caesarCipher(text, shift = 3) {
             // Aplica o deslocamento
             const shifted = ((char.charCodeAt(0) - base + shift) % 26) + base;
             result += String.fromCharCode(shifted);
+        } else if (char.match(/[0-9]/)) {
+            // Processa dígitos com deslocamento circular de 3
+            const digit = parseInt(char);
+            const shiftedDigit = (digit + shift) % 10;
+            result += shiftedDigit.toString();
         } else {
-            // Mantém caracteres não alfabéticos inalterados
+            // Mantém caracteres não alfanuméricos inalterados
             result += char;
         }
     }
@@ -73,8 +78,10 @@ function generateExplanation(originalText, encryptionType = 'caesar') {
             const encryptedChar = encrypted[i];
             if (originalChar.match(/[a-z]/i)) {
                 explanation += `<li>"${originalChar}" → "${encryptedChar}" (deslocamento de 3 posições)</li>`;
+            } else if (originalChar.match(/[0-9]/)) {
+                explanation += `<li>"${originalChar}" → "${encryptedChar}" (deslocamento de 3 unidades, rotação circular)</li>`;
             } else {
-                explanation += `<li>"${originalChar}" → "${encryptedChar}" (caractere não alfabético, permanece inalterado)</li>`;
+                explanation += `<li>"${originalChar}" → "${encryptedChar}" (caractere não alfanumérico, permanece inalterado)</li>`;
             }
         }
         explanation += '</ul>';
@@ -122,8 +129,10 @@ function generateDecryptExplanation(decryptText, decryptType = 'caesar') {
             const decryptedChar = decrypted[i];
             if (originalChar.match(/[a-z]/i)) {
                 explanation += `<li>"${originalChar}" → "${decryptedChar}" (deslocamento de -3 posições)</li>`;
+            } else if (originalChar.match(/[0-9]/)) {
+                explanation += `<li>"${originalChar}" → "${decryptedChar}" (deslocamento de -3 unidades, rotação circular)</li>`;
             } else {
-                explanation += `<li>"${originalChar}" → "${decryptedChar}" (caractere não alfabético, permanece inalterado)</li>`;
+                explanation += `<li>"${originalChar}" → "${decryptedChar}" (caractere não alfanumérico, permanece inalterado)</li>`;
             }
         }
         explanation += '</ul>';

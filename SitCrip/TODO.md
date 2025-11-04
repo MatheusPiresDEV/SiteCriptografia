@@ -14,3 +14,11 @@
 - [x] Adicionar nova aba "Como foi Descriptografado" com explicação passo a passo para César usando exemplo do usuário
 - [x] Atualizar script.js com funções decryptText, generateDecryptExplanation e eventos para novas abas
 - [ ] Testar o site abrindo no navegador para verificar funcionalidade, responsividade e design
+
+# TODO - Suporte à Criptografia de Números Decimais e Negativos
+
+- [x] Atualizar função caesarCipher para processar dígitos (0-9) com deslocamento de 3 unidades e rotação circular
+- [x] Atualizar função caesarDecipher para descriptografia com deslocamento -3
+- [x] Atualizar generateExplanation para incluir explicação passo a passo para dígitos em criptografia César
+- [x] Atualizar generateDecryptExplanation para incluir explicação passo a passo para dígitos em descriptografia César
+- [ ] Testar a funcionalidade com exemplos como 1.25 → 4.58, -12.3 → -45.6, e descriptografia inversa
