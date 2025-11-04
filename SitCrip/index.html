@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criptografia César</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Criptografia César</h1>
-        <p>Uma ferramenta simples para criptografar frases usando a cifra de César com deslocamento de 3 caracteres ou criptografia aleatória.</p>
+        <p>Uma ferramenta simples para criptografar frases usando a cifra de César com deslocamento de 3 caracteres ou
+            criptografia aleatória.</p>
     </header>
 
     <nav>
@@ -54,8 +57,10 @@
                     <option value="random">Criptografia aleatória</option>
                 </select>
             </div>
-            <button id="decrypt-button">Descriptografar</button>
-            <div id="decrypt-error-message" class="error hidden">Por favor, digite uma frase válida antes de descriptografar.</div>
+
+            <button class="tab-button" data-tab="decrypt" id="decrypt-button">Descriptografar</button>
+            <div id="decrypt-error-message" class="error hidden">Por favor, digite uma frase válida antes de
+                descriptografar.</div>
             <div id="decrypt-result" class="result hidden">
                 <h3>Resultado:</h3>
                 <p id="decrypted-text"></p>
@@ -64,7 +69,8 @@
 
         <section id="how-it-works" class="tab-content">
             <h2>Como Funciona a Cifra de César</h2>
-            <p>A cifra de César é um método de criptografia simples onde cada letra do alfabeto é deslocada por um número fixo de posições. Neste site, usamos um deslocamento de 3 caracteres.</p>
+            <p>A cifra de César é um método de criptografia simples onde cada letra do alfabeto é deslocada por um
+                número fixo de posições. Neste site, usamos um deslocamento de 3 caracteres.</p>
             <p id="example-text">Por exemplo, se você digitar "Olá Mundo!", a transformação será:</p>
             <div id="explanation">
                 <p>Aguarde uma entrada para ver a explicação passo a passo.</p>
@@ -81,4 +87,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
